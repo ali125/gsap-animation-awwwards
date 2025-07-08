@@ -4,7 +4,7 @@ import type { IconType } from "react-icons";
 type Props = {
   title: string;
   id?: string;
-  rightIcon?: string;
+  rightIcon?: React.ReactElement<IconType>;
   leftIcon?: React.ReactElement<IconType>;
   containerClass?: string;
 };
