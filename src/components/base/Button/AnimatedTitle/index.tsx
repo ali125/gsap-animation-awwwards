@@ -3,10 +3,15 @@ import React, { useEffect, useRef } from "react";
 
 type Props = {
   title: string;
+  sectionId?: string;
   containerClass?: string;
 };
 
-const AnimatedTitle: React.FC<Props> = ({ title, containerClass }) => {
+const AnimatedTitle: React.FC<Props> = ({
+  title,
+  sectionId,
+  containerClass,
+}) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -32,7 +37,11 @@ const AnimatedTitle: React.FC<Props> = ({ title, containerClass }) => {
   }, []);
 
   return (
-    <div ref={containerRef} className={`animated-title ${containerClass}`}>
+    <div
+      ref={containerRef}
+      id={sectionId}
+      className={`animated-title ${containerClass}`}
+    >
       {title.split("<br />").map((line, index) => (
         <div
           key={index}
